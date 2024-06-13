@@ -15,32 +15,32 @@ import javax.ws.rs.NotFoundException;
 import javax.inject.Inject;
 import io.quarkus.logging.Log;
 
-@Path("/products")
+@Path("/fruits")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class ProductResource {
+public class FruitResource {
 
 	@Inject
-	ProductRepository repository;
+	FruitRepository repository;
 
 	@GET
-	public List<Product> list() {
+	public List<Fruit> list() {
 		return repository.listAll();
 	}
 
 	@POST
 	@Transactional
-	public Response create(Product product) {
-		repository.persist(product);
-		Log.info("A product has been created " + product.toString() + ".");
-		return Response.created(URI.create("/products/" + product.id)).build();
+	public Response create(Fruit fruit) {
+		repository.persist(fruit);
+		Log.info("A fruit has been created " + fruit.toString() + ".");
+		return Response.created(URI.create("/fruits/" + fruit.id)).build();
 	}
 
 	@DELETE
 	@Path("/{id}")
 	@Transactional
 	public void delete(Long id) {
-		Product entity = repository.findById(id);
+		Fruit entity = repository.findById(id);
 		if (entity == null) {
 			throw new NotFoundException();
 		}

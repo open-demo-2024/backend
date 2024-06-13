@@ -1,7 +1,7 @@
 package org.redhat.consensus.namevalidator;
 
 
-public class ProductService {
+public class FruitService {
 
 }
 

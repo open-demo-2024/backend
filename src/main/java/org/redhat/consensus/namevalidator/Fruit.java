@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 
 @Entity
-public class Product {
+public class Fruit {
 
 	@Id
 	@GeneratedValue
