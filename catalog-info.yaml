@@ -6,7 +6,7 @@ metadata:
     Fruit backend component.
   annotations:
     gitlab.com/project-slug: user1/fruit-backend
-    backstage.io/techdocs-ref: dir:./docs
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: library
   owner: group:user1
