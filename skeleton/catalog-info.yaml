@@ -1,3 +1,9 @@
+{%- if values.organization %}
+  {%- set organization = values.organization %}
+{%- else %}
+  {%- set organization = 'open-demo-2024' %}
+{% endif -%}
+
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
@@ -5,7 +11,7 @@ metadata:
   description: |
     Fruit backend component.
   annotations:
-    github.com/project-slug: ${{ values.organization }}/${{ values.name }}
+    github.com/project-slug: ${{ organization }}/${{ values.name }}
     backstage.io/techdocs-ref: dir:.
     quay.io/repository-slug: rh_ee_symartin/${{ values.name }}
 spec:
