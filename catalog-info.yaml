@@ -9,5 +9,5 @@ metadata:
     backstage.io/techdocs-ref: dir:.
 spec:
   type: library
-  owner: smartinus44
+  owner: user:smartinus44
   lifecycle: experimental
