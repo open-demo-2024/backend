@@ -5,9 +5,9 @@ metadata:
   description: |
     Fruit backend component.
   annotations:
-    gitlab.com/project-slug: user1/fruit-backend
+    gitlab.com/project-slug: open-demo-2024/fruit-backend
     backstage.io/techdocs-ref: dir:.
 spec:
   type: library
-  owner: group:user1
+  owner: group:smartinus44
   lifecycle: experimental
