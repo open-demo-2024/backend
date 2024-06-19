@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ${{ values.name }}
+  description: |
+    Fruit backend component.
+  annotations:
+    github.com/project-slug: open-demo-2024/${{ values.name }}
+    backstage.io/techdocs-ref: dir:.
+    quay.io/repository-slug: rh_ee_symartin/${{ values.name }}
+spec:
+  type: library
+  owner: user:smartinus44
+  lifecycle: experimental

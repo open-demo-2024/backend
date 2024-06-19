@@ -51,7 +51,7 @@ spec:
       name: Fetch Base
       action: fetch:template
       input:
-        url: https://github.com/open-demo-2024/fruit-backend/tree/work
+        url: ./skeleton
         values:
           name: ${{ parameters.name }}
           owner: ${{ parameters.owner }}
