@@ -5,7 +5,7 @@ metadata:
   description: |
     Fruit backend component.
   annotations:
-    github.com/project-slug: open-demo-2024/${{ values.name }}
+    github.com/project-slug: ${{ values.organization }}/${{ values.name }}
     backstage.io/techdocs-ref: dir:.
     quay.io/repository-slug: rh_ee_symartin/${{ values.name }}
 spec:
