@@ -40,38 +40,38 @@ spec:
         - organization
         - targetrepo
       properties:
-        host:
-          title: Host git
-          type: string
-          default: github.com
-          description: SCM url
-          ui:autofocus: true
-          ui:options:
-            rows: 5
-        organization:
-          title: Organisation
-          type: string
-          description: Organisation in SCM
-          default: open-demo-2024
-          ui:autofocus: true
-          ui:options:
-            rows: 5
-        targetrepo:
-          title: Target repository
-          type: string
-          description: Generated repo name
-          default: development
-          ui:autofocus: true
-          ui:options:
-            rows: 5
-         
-        #repoUrl:
-        #  title: Repository Location
+        #host:
+        #  title: Host git
         #  type: string
-        #  ui:field: RepoUrlPicker
+        #  default: github.com
+        #  description: SCM url
+        #  ui:autofocus: true
         #  ui:options:
-        #    allowedHosts:
-        #      - github.com
+        #    rows: 5
+        #organization:
+        #  title: Organisation
+        #  type: string
+        #  description: Organisation in SCM
+        #  default: open-demo-2024
+        #  ui:autofocus: true
+        #  ui:options:
+        #    rows: 5
+        #targetrepo:
+        #  title: Target repository
+        #  type: string
+        #  description: Generated repo name
+        #  default: development
+        #  ui:autofocus: true
+        #  ui:options:
+        #    rows: 5
+         
+        repoUrl:
+          title: Repository Location
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
 
   # here's the steps that are executed in series in the scaffolder backend
   steps:
@@ -97,8 +97,8 @@ spec:
       input:
         allowedHosts: ['github.com']
         description: This is ${{ parameters.name }}
-        repoUrl: ${{ parameters.host }}/${{ parameters.organization }}/${{ parameters.targetrepo }}
-
+        #repoUrl: ${{ parameters.host }}/${{ parameters.organization }}/${{ parameters.targetrepo }}
+        repoUrl: ${{ parameters.repoUrl }}
     - id: register
       name: Register
       action: catalog:register
