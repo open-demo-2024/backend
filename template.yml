@@ -25,7 +25,7 @@ spec:
           title: Name
           type: string
           default: test
-          description: Unique name of the component
+          description: Unique name of the component to generate.
           ui:autofocus: true
           ui:options:
             rows: 5
@@ -38,7 +38,7 @@ spec:
           ui:options:
             catalogFilter:
               kind: Group
-    - title: Choose a location
+    - title: Choose a location to publish.
       required:
         #- repoUrl
         - host
@@ -69,7 +69,53 @@ spec:
           ui:autofocus: true
           ui:options:
             rows: 5
-         
+    - title: Provide Image Registry Information
+      required:
+        - image_registry
+      properties:
+        image_registry:
+          title: Image Registry
+          type: string
+          enum:
+            - Openshift
+            - Quay
+      dependencies:
+        image_registry:
+          oneOf:
+            - properties:
+                image_registry:
+                  enum:
+                    - Openshift
+                image_host:
+                  title: Image Host
+                  type: string
+                  description: Host for storing image
+                  default: image-registry.openshift-image-registry.svc:5000
+                image_tag:
+                  title: Image Tag
+                  default: latest
+                  type: string
+                  description: Build Image tag
+            - properties:
+                image_registry:
+                  enum:
+                    - Quay
+                image_host:
+                  title: Image Host
+                  type: string
+                  description: Host for storing image
+                  default: quay.io
+                image_organization:
+                  title: Organization
+                  type: string
+                  description: Name of the Quay Organization
+                  default: quayadmin
+                image_tag:
+                  title: Image Tag
+                  default: latest
+                  type: string
+                  description: Build Image tag
+     
         #repoUrl:
         #  title: Repository Location
         #  type: string
