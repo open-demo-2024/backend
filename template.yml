@@ -35,10 +35,10 @@ spec:
               kind: Group
     - title: Choose a location
       required:
-        #- repoUrl
-        - host
-        - organization
-        - targetrepo
+        - repoUrl
+        #- host
+        #- organization
+        #- targetrepo
       properties:
         #host:
         #  title: Host git
