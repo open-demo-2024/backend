@@ -5,9 +5,9 @@ metadata:
   description: |
     Fruit backend component.
   annotations:
-    github.com/project-slug: ${{ values.organization }}/${{ values.name }}
+    github.com/project-slug: ${{ values.organization }}/${{ values.targetrepo }}
     backstage.io/techdocs-ref: dir:.
-    quay.io/repository-slug: rh_ee_symartin/${{ values.name }}
+    quay.io/repository-slug: rh_ee_symartin/${{ values.targetrepo }}
 spec:
   type: library
   owner: user:smartinus44

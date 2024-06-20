@@ -84,6 +84,7 @@ spec:
           name: ${{ parameters.name }}
           owner: ${{ parameters.owner }}
           organization: ${{ parameters.organization }}
+          targetrepo: ${{ parameters.targetrepo }}
     #- id: fetch-docs
     #  name: Fetch Docs
     #  action: fetch:plain
