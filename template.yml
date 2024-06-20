@@ -6,6 +6,11 @@ metadata:
   name: rhdhopendemo
   title: RHDH Test Scaffold template from Backstage with a fruit backend
   description: This template copy the content of https://github.com/open-demo-2024/fruit-backend/tree/work in a new repository.
+  tags:
+    - java
+    - quarkus
+    - maven
+    - quay
 spec:
   owner: user:smartinus44
   type: service
@@ -76,7 +81,7 @@ spec:
   # here's the steps that are executed in series in the scaffolder backend
   steps:
     - id: fetch-base
-      name: Fetch Base
+      name: Generating the source code component.
       action: fetch:template
       input:
         url: ./skeleton
@@ -93,15 +98,17 @@ spec:
     #    url: https://github.com/utherp0/testscaffold
 
     - id: publish
-      name: Publish
+      name: Publish to the SCM repository
       action: publish:github
       input:
         allowedHosts: ['github.com']
         description: This is ${{ parameters.name }}
         repoUrl: ${{ parameters.host }}?owner=${{ parameters.organization }}&repo=${{ parameters.targetrepo }}
+        defaultBranch: main
+        repoVisibility: public
         #repoUrl: ${{ parameters.repoUrl }}
     - id: register
-      name: Register
+      name: Register the catalog info component
       action: catalog:register
       input:
         repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
