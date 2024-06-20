@@ -44,14 +44,14 @@ spec:
           title: Host git
           type: string
           default: github.com
-          description: SCM url
+          description: The SCM url.
           ui:autofocus: true
           ui:options:
             rows: 5
         organization:
           title: Organisation
           type: string
-          description: Organisation in SCM
+          description: Title of the organisation in SCM.
           default: open-demo-2024
           ui:autofocus: true
           ui:options:
@@ -59,7 +59,7 @@ spec:
         targetrepo:
           title: Target repository
           type: string
-          description: Generated repo name
+          description: The repository name to generate.
           default: development
           ui:autofocus: true
           ui:options:
