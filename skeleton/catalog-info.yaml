@@ -5,6 +5,7 @@ metadata:
   description: |
     Fruit backend component.
   annotations:
+    backstage.io/kubernetes-id: ${{values.name}}
     github.com/project-slug: ${{ values.organization }}/${{ values.targetrepo }}
     backstage.io/techdocs-ref: dir:.
     quay.io/repository-slug: rh_ee_symartin/${{ values.targetrepo }}
